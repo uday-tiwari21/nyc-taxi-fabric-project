@@ -351,8 +351,6 @@ Reproducing the project requires access to a Fabric workspace and the appropriat
 ## Notes
 
 - The source Parquet data is not included because of its size.
-- Do not commit passwords, access tokens, connection strings, or other secrets.
 - Fabric trial workspaces and capacity availability may change over time.
-- Check the source dataset's terms before redistributing its data.
-- No repository license has been specified. Add a license file if you want to define reuse permissions.
+
 
