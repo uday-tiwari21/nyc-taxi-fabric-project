@@ -356,7 +356,3 @@ Reproducing the project requires access to a Fabric workspace and the appropriat
 - Check the source dataset's terms before redistributing its data.
 - No repository license has been specified. Add a license file if you want to define reuse permissions.
 
-## Acknowledgements
-
-This learning project was developed by following a Microsoft Fabric NYC Taxi end-to-end project walkthrough and documenting the implementation.
-
