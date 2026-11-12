@@ -166,15 +166,14 @@ flowchart LR
     F --> G[Date-range cleanup]
     G --> H[Staging metadata log]
 
-    F --> I[pl_pres_processing_nyctaxi]
+    F --> I[Presentation Dataflow]
     C --> I
-    I --> J[Presentation Dataflow]
-    J --> K[Presentation table: dbo.nyctaxi_yellow]
-    K --> L[Presentation metadata log]
-    K --> M[Power BI semantic model and report]
+    I --> J[Presentation table: dbo.nyctaxi_yellow]
+    J --> K[Presentation metadata log]
+    J --> L[Power BI semantic model and report]
 
-    N[pl_orchestrate_nyctaxi] --> E
-    N --> I
+    M[pl_orchestrate_nyctaxi] --> E
+    E --> I
 ```
 
 ## Pipeline Summary
