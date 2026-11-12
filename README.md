@@ -162,23 +162,20 @@ flowchart LR
     B --> C[Fabric lookup table]
 
     D[Taxi trip source files] --> E[pl_stg_processing_nyctaxi]
-    C --> F[Lookup data used in transformation]
-    E --> G[Staging table]
-    G --> H[Date-range cleanup]
-    H --> I[Staging metadata log]
+    E --> F[Staging table]
+    F --> G[Date-range cleanup]
+    G --> H[Staging metadata log]
 
-    I --> J[pl_pres_processing_nyctaxi]
-    G --> J
-    J --> K[Presentation Dataflow]
-    K --> L[Presentation table: dbo.nyctaxi_yellow]
-    L --> M[Presentation metadata log]
-    L --> N[Power BI semantic model and report]
+    F --> I[pl_pres_processing_nyctaxi]
+    C --> I
+    I --> J[Presentation Dataflow]
+    J --> K[Presentation table: dbo.nyctaxi_yellow]
+    K --> L[Presentation metadata log]
+    K --> M[Power BI semantic model and report]
 
-    O[pl_orchestrate_nyctaxi] --> E
-    O --> J
-
-
-
+    N[pl_orchestrate_nyctaxi] --> E
+    N --> I
+```
 
 ## Pipeline Summary
 
@@ -187,9 +184,7 @@ flowchart LR
 | `pl_stg_lookup` | Copies taxi zone reference data into Fabric. | Lookup table |
 | `pl_stg_processing_nyctaxi` | Loads taxi trip data into staging, applies date-range cleanup, and logs staging metadata. | Cleaned staging table and staging log entry |
 | `pl_pres_processing_nyctaxi` | Transforms staging data for reporting and logs presentation metadata. | Presentation table and presentation log entry |
-| `pl_orchestrate_nyctaxi` | Invokes the staging and presentation pipelines in sequence. | Coordinated end-to-end processing run |
-
-
+| `pl_orchestrate_nyctaxi` | Invokes the staging and presentation pipelines in sequence. | Coordinated processing run |
 
 ## Workflow and Implementation
 
